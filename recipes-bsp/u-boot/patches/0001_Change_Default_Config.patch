@@ -1,0 +1,21 @@
+diff --git a/configs/zynq_zc702_defconfig b/configs/zynq_zc702_defconfig
+index 040f424..312f9f3 100644
+--- a/configs/zynq_zc702_defconfig
++++ b/configs/zynq_zc702_defconfig
+@@ -1,5 +1,5 @@
+ CONFIG_ARM=y
+-CONFIG_SYS_CONFIG_NAME="zynq_zc70x"
++CONFIG_SYS_CONFIG_NAME="platform-top"
+ CONFIG_ARCH_ZYNQ=y
+ CONFIG_SYS_TEXT_BASE=0x4000000
+ CONFIG_SYS_MALLOC_F_LEN=0x800
+@@ -36,7 +36,8 @@ CONFIG_CMD_TFTPPUT=y
+ CONFIG_CMD_CACHE=y
+ CONFIG_CMD_EXT4_WRITE=y
+ CONFIG_OF_EMBED=y
+-CONFIG_ENV_IS_IN_SPI_FLASH=y
++CONFIG_ENV_IS_IN_SPI_FLASH=n
++CONFIG_ENV_IS_IN_MMC=y
+ CONFIG_NET_RANDOM_ETHADDR=y
+ CONFIG_SPL_DM_SEQ_ALIAS=y
+ CONFIG_DFU_MMC=y
