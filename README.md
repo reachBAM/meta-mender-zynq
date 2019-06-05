@@ -27,7 +27,7 @@ See integration details in the [Mender Hub Page](https://hub.mender.io/t/incompl
 	* Patch Mender
 		* `git apply ../meta-mender-zynq/patches/Mender_No_Dtb_Fix.patch`
 		* This patch provides a mechanism for avoiding a compile error because Zynq puts the dtb file inside a fitimage
-		* Recommendation taken from [Mender Hub Page](https://hub.mender.io/t/yocto-how-to-build-mender-with-external-device-tree/423/3)		
+		* Recommendation taken from [Mender Hub Page](https://hub.mender.io/t/yocto-how-to-build-mender-with-external-device-tree/423/4)		
 * Run `petalinux-config`
 	* cd `<projectdir>`
 	* Add mender layers
