@@ -1,0 +1,30 @@
+diff --git a/include/configs/zynq-common.h b/include/configs/zynq-common.h
+index ee2a1c8..07d184f 100644
+--- a/include/configs/zynq-common.h
++++ b/include/configs/zynq-common.h
+@@ -147,7 +147,12 @@
+ #endif
+ 
+ /* Total Size of Environment Sector */
+-#define CONFIG_ENV_SIZE			(128 << 10)
++#define CONFIG_ENV_SIZE 0x4000
++#define CONFIG_ENV_ADDR (CONFIG_SYS_MONITOR_BASE - CONFIG_ENV_SIZE)
++
++/* Enable Bootcount */
++#define CONFIG_BOOTCOUNT_LIMIT
++#define CONFIG_BOOTCOUNT_ENV
+ 
+ /* Allow to overwrite serial and ethaddr */
+ #define CONFIG_ENV_OVERWRITE
+@@ -155,11 +160,6 @@
+ /* Environment */
+ #ifndef CONFIG_ENV_IS_NOWHERE
+ # define CONFIG_ENV_SECT_SIZE		CONFIG_ENV_SIZE
+-
+-/* cc108 requires to be 0xF00000 to have boot.bin with bitstream included */
+-# ifndef CONFIG_ENV_OFFSET
+-#  define CONFIG_ENV_OFFSET		0xE0000
+-# endif
+ #endif
+ 
+ /* enable preboot to be loaded before CONFIG_BOOTDELAY */
