@@ -3,7 +3,7 @@
 ## The Repository
 Welcome to the meta-mender-zynq Repo.  This layer contains [mender](https://mender.io/) specific integrations for Xilinx Zynq 7000 hardware, for Over The Air (OTA) software update support of Xilinx Petalinux (Yocto) based Zynq 7000 builds.
 
-See integration details in the [Mender Hub Page](https://hub.mender.io/t/yocto-how-to-build-mender-with-external-device-tree/423/3)
+See integration details in the [Mender Hub Page](https://hub.mender.io/t/TBD)
 
 ## Supported Boards
 * Trenz TE0715-04 Module with Trenz TE0706-02 Carrier
@@ -27,7 +27,7 @@ See integration details in the [Mender Hub Page](https://hub.mender.io/t/yocto-h
 	* Patch Mender
 		* `git apply ../meta-mender-zynq/patches/Mender_No_Dtb_Fix.patch`
 		* This patch provides a mechanism for avoiding a compile error because Zynq puts the dtb file inside a fitimage
-		* Recommendation taken from [Mender Hub Page](https://hub.mender.io/t/TBD)		
+		* Recommendation taken from [Mender Hub Page](https://hub.mender.io/t/yocto-how-to-build-mender-with-external-device-tree/423/3)		
 * Run `petalinux-config`
 	* cd `<projectdir>`
 	* Add mender layers
