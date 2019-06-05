@@ -23,3 +23,5 @@ MENDER_STORAGE_TOTAL_SIZE_MB = "10240"
 
 MENDER_FEATURES_ENABLE_append = " mender-image mender-uboot mender-image-sd"
 MENDER_FEATURES_DISABLE_append = " mender-grub mender-image-uefi mender-systemd"
+
+MENDER_ARTIFACT_NAME="<insertname>"
