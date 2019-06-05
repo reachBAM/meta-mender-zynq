@@ -3,7 +3,7 @@
 ## The Repository
 Welcome to the meta-mender-zynq Repo.  This layer contains [mender](https://mender.io/) specific integrations for Xilinx Zynq 7000 hardware, for Over The Air (OTA) software update support of Xilinx Petalinux (Yocto) based Zynq 7000 builds.
 
-See integration details in the [Mender Hub Page](https://hub.mender.io/t/TBD)
+See integration details in the [Mender Hub Page](https://hub.mender.io/t/incomplete-xilinx-zynq-7000/)
 
 ## Supported Boards
 * Trenz TE0715-04 Module with Trenz TE0706-02 Carrier
@@ -51,10 +51,11 @@ See integration details in the [Mender Hub Page](https://hub.mender.io/t/TBD)
 	* Add `CONFIG_mender=y`
 * Modify project-spec/meta-user/recipes-core/images/petalinux-image-full.bbappend
 	* Add `IMAGE_INSTALL_append = " mender"`
-* Modify project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
-	* Change `root="..."` to
-	* `root=${mender_kernel_root}`
+* Modify bootargs in project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
+	* Change `bootargs = "... root=XXX ...` to
+	* `bootargs = "... root=${mender_kernel_root} ...`
 	* Note this only applies if you are overriding the boot args in the device tree
+	* Alternatively, Petalinux may be defining it in `components/plnx_workspace/device-tree/device-tree/system-user.dtsi`
 	* TODO: Provide example when not using device tree
 * Add golang recipe
 	* TBD
