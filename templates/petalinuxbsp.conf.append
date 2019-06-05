@@ -1,0 +1,25 @@
+# Add EXTRA_IMAGEDEPENDS default components
+EXTRA_IMAGEDEPENDS_append_zynq = " virtual/fsbl xilinx-bootbin"
+
+IMAGE_FSTYPES_remove = "wic.qemu-sd ext3 ext3.bz2 cpio cpio.gz cpio.bz2 cpio.gz.u-boot tar.bz2 jffs2 ext4.gz"
+
+KERNEL_IMAGETYPE = "fitImage"
+
+PREFERRED_PROVIDER_u-boot-fw-utils = "u-boot-fw-utils"
+PREFERRED_RPROVIDER_u-boot-fw-utils = "u-boot-fw-utils"
+
+# Set up tools to create boot.bin
+BOOTBIN_BASE_NAME = "BOOT"
+# Need hard-coded path to .hdf file in order to generate boot.bin
+HDF_PATH = "/home/<user>/.../<filename>.hdf"
+
+IMAGE_BOOT_FILES = "uEnv.txt BOOT.bin"
+
+# Example: Memory card storage
+MENDER_STORAGE_DEVICE = "/dev/mmcblk0"
+# Example: Memory card with 2GiB of storage.
+#MENDER_STORAGE_TOTAL_SIZE_MB = "30436"
+MENDER_STORAGE_TOTAL_SIZE_MB = "10240"
+
+MENDER_FEATURES_ENABLE_append = " mender-image mender-uboot mender-image-sd"
+MENDER_FEATURES_DISABLE_append = " mender-grub mender-image-uefi mender-systemd"
