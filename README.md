@@ -16,7 +16,7 @@ See integration details in the [Mender Hub Page](https://hub.mender.io/t/TBD)
 ## Development Environment Setup
 
 ### Configuration
-* Run > petalinux-config
+* Run `petalinux-config`
 	* Add mender layers
 		* Yocto Settings --->
 		* User Layers --->
@@ -35,15 +35,12 @@ See integration details in the [Mender Hub Page](https://hub.mender.io/t/TBD)
 		* Exit
 	* Exit
 * Modify project-spec/configs/rootfs_config
-	* Add CONFIG_mender=y
+	* Add `CONFIG_mender=y`
 * Modify project-spec/meta-user/recipes-core/images/petalinux-image-full.bbappend
-	* Add IMAGE_INSTALL_append = " mender"
+	* Add `IMAGE_INSTALL_append = " mender"`
 * Modify project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
-	* Change > root="..." to
-	* > root=${mender_kernel_root}
-
+	* Change `root="..."` to
+	* `root=${mender_kernel_root}`
 
 ## Building
 
-## Deploying
-* 
