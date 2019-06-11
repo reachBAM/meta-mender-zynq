@@ -1,0 +1,10 @@
+autoload=no
+ethaddr=00:0a:35:00:23:01
+netstart=0x10000000
+fpgastart=0x4000000
+kernel_img=boot/fitImage
+fpga_img=boot/fpga.bin
+set_bootargs=setenv bootargs console=ttyPS0,115200 earlyprintk root=${mender_kernel_root} rw rootwait uio_pdrv_genirq.of_id=generic-uio
+set_fpgaload=setenv loadfpga2ram mmcinfo && ext4load mmc 0:${mender_boot_part_hex} ${fpgastart} ${fpga_img} && fpga load 0 ${fpgastart} ${filesize}
+set_copykernel=setenv r_cp_kernel2ram mmcinfo && ext4load ${mender_uboot_root} ${netstart} ${kernel_img}
+uenvcmd=run set_fpgaload; run loadfpga2ram; run mender_setup; run set_bootargs; run set_copykernel;  run r_cp_kernel2ram && bootm ${netstart}
