@@ -1,0 +1,7 @@
+/include/ "system-conf.dtsi"
+/ {
+	chosen {
+		bootargs = "console=ttyPS0,115200 earlyprintk root=${mender_kernel_root} rw rootwait";		
+	};	
+};
+
